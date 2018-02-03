@@ -1,0 +1,8 @@
+- touch -r for SSH keyfile install
+- fuck up java classpath/etc on Jenkins build servers
+  - default environment path string too large for Java, causing it to crash
+- fuck up netmask to bork network config
+  - circular deps for openjre
+- fuck with judge communications from mail server
+  - delete or reroute inject emails from judges
+  
