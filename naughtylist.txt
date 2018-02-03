@@ -5,4 +5,12 @@
   - circular deps for openjre
 - fuck with judge communications from mail server
   - delete or reroute inject emails from judges
-  
+- Revocer plaintext API keys from Jenkins: https://github.com/jenkinsci/jenkins/pull/3271
+- Ransomware: hold config files hostage for credits
+  - Hold one team hostage to middleman transactions for us
+    - Force team to dump all credits to us
+    - Force team to transfer all reverse shells to us
+  - Config files
+    - overwrite entirely
+    - actually decrypt
+    - provide malious version
